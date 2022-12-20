@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: myfirst 2s 2;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
+.animation-2 {animation-iteration-count: 1;}
+.animation-3 {animation-iteration-count: 2;}
+.animation-4 {animation-iteration-count: 3;}
+
+@keyframes myfirst {
+  0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 400px; top: 0px;}
+  75%  {background: green; left: 600px; top: 0px;}
+  100% {background: red; left: 800px; top: 0px;}
+}
+</style>
+</head>
+<body>
+
+<h1>animation-direction: alternate</h1>
+
+<p>1. Cada ida y cada vuelta cuenta como un ciclo.</p>
+<p>Si por defecto no señalamos animation-iteration-count, el elemento va y vuelve</p>
+<div class="animation-1"></div>
+
+<p>2. Si especificamos 1, al contar la ida  como 1 ciclo, no volverá, aunque animation-direction, esté definido como alternate (ida y vuelta).</p>
+<div class="animation-2"></div>
+
+<p>3. En este caso especificamos 2 en el valor de animation-iteration-count, por lo tanto va y vuelve. Es igual que el comportamiento por defecto</p>
+<div class="animation-3"></div>
+
+<p>4. En este caso especificamos 3 en el valor de animation-iteration-count. En este caso hará un ciclo completo (1-2), y el tercer movimiento será solo de ida, y no de vuelta.</p>
+<div class="animation-4"></div>
+
+</body>
+</html>
